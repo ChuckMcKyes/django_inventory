@@ -1,0 +1,7 @@
+
+body {
+  background-image: url("/static/trees_water.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 60rem;
+}
