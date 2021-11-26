@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-lg ms-5 mt-4 p-2 bg-dark text-light rounded">
+  <p>
+  <h3 class="bg-secondary p-1 rounded">{{ item.name }}</h3>
+  </p>
+  <div class="d-inline-flex">
+    <div class="card p-1 m-1 bg-secondary">
+      {% if item.image %}
+      <a href="/media/{{item.image}}" target="_top">
+        <img class="card-img-top" src="/media/{{item.image}}" alt="image">
+      </a>
+      {% else %}
+      <img class="card-img-top" src="/media/noimage.png" alt="image">
+      {% endif %}
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li><strong>Name:</strong> {{ item.name }}</li>
+          <li><strong>Manufacturer:</strong> {{ item.manufacturer }}</li>
+          <li><strong>Model</strong> {{ item.name }}</li>
+          <li><strong>Serial number:</strong> {{ item.serial_number }}</li>
+          <li><strong>Purchase date:</strong> {{ item.purchase_date }}</li>
+          <li><strong>Purchase price: $</strong> {{ item.purchase_price }}</li>
+          <li><strong>Notes:</strong> {{ item.notes }}</li>
+          <li><strong>Category:</strong> {{ item.category }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card p-1 m-1 bg-dark" style="width: 18rem">
+      <ul class="list-unstyled p-2">
+        <li class="p-1"><a href="{{ item.get_absolute_url }}/update/">
+            <button class="btn btn-primary btn-sm" style="width: 7rem">Update data</button></a></li>
+        <li class="p-1"><a href="{{ item.get_absolute_url }}/delete/">
+            <button class="btn btn-primary btn-sm" style="width: 7rem">Delete item</button></a></li></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

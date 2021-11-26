@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Inventory</title>{% endblock %}
+{% block content %}
+  <div class="container-lg ms-5 mt-4 p-2 bg-dark text-light rounded"
+               style="width: 700px; opacity: 90%">
+    <p>Welcome to Inventory, a website developed by <em>Chuck McKyes</em></p>
+    <p>
+      This site is written in <a href="https://docs.djangoproject.com/en/3.2/" target="_blank">Django</a>.
+      The side menu and formatting is from <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.
+    </p>
+    <p>The inventory has the following record counts:</p>
+    <ul>
+      <li><strong>Items:</strong> {{ num_items }}</li>
+      <li><strong>Categories:</strong> {{ num_categories }}</li>
+    </ul>
+    <p>All photos <a href="https://commons.wikimedia.org" target="_blank">commons.wikimidia.org</a>, no restrictions,
+          except the site background photo, copyright Chuck McKyes</p>
+    <p>Three web apis are served. These can be copied into a browser address bar to serve
+        up data in json format, or can be used in other apps:</p>
+    <a href="https://yosa.design/inventory/api/list/">https://yosa.design/inventory/api/list/</a>
+    <p>will serve the entire list of inventory items.</p>
+    <a href="https://yosa.design/inventory/api/list/?search=ca">https://yosa.design/inventory/api/list/?search=ca</a>
+    <p>will search for those items with "ca" in their names.</p>
+    <a href="https://yosa.design/inventory/api/categories/">https://yosa.design/inventory/api/categories/</a>
+    <p>will show the list of item categories</p>
+    <a href="https://yosa.design/inventory/api/2">https://yosa.design/inventory/api/item/2</a>
+    <p>will show the details for the item with id=2, for example.</p>
+    <!-- <p>Number of visits: {{ num_visits }} time{{ num_visits|pluralize }}</p> -->
+  </div>
+{% endblock %}

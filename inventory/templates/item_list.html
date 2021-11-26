@@ -1,0 +1,82 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <symbol id="search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+  </symbol>
+</svg>
+<!-- Ordered by: {{ list_order }} -->
+<div class="container-lg ms-5 mt-1 p-2 bg-dark text-light rounded">
+  <nav class="navbar navbar-expand navbar-dark bg-secondary" aria-label="Second navbar example">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-sort" aria-controls="navbarsExample02" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar_sort">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle bg-primary rounded text-white"
+                  href="{% url 'item_list' 'name' %}" id="dropdown03"
+                  data-bs-toggle="dropdown" aria-expanded="false">Sort by</a>
+            <ul class="dropdown-menu bg-secondary" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item text-white" href="{% url 'item_list' 'name' %}">name</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'item_list' 'category' %}">category</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'item_list' 'purchase_date' %}">purhase date</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'item_list' 'purchase_price' %}">purhase price</a></li>
+            </ul>
+          </li>
+        </ul>
+        {% if item_count  %}
+          <div class="col-lg-3">
+            {{ item_count }} items
+          </div>
+        {% endif %}
+        <form action="" class="d-inline-flex">
+          <input class="form-control m-1" type="text" name="search" placeholder="Search" aria-label="Search">
+          <button type="submit" class="btn btn-primary m-1">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#search" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  {% if item_list  %}
+  <div class="d-inline-flex flex-wrap">
+    {% for item in item_list %}
+    <div class="card p-1 m-1 bg-secondary" style="width: 200px; opacity: 100%">
+      {% if item.image %}
+      <a href="{{ item.get_absolute_url }}">
+        <img class="card-img-top" src="/media/{{item.image}}" alt="image">
+      </a>
+      {% else %}
+      <img class="card-img-top" src="/media/noimage.png" alt="image">
+      {% endif %}
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li>
+            <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+          </li>
+          {% if item.category %}
+          <li>
+            {{ item.category }}
+          </li>
+          {% endif %}
+          {% if item.purchase_date %}
+          <li>
+            {{ item.purchase_date }}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>There are no items in inventory.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

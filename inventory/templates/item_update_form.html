@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-lg ms-5 mt-4 p-2 bg-dark text-light rounded">
+  <p>
+    <h3 class="bg-secondary p-1 rounded">
+      {% if form.name.value %}
+      Update Data
+      {% else %}
+      New Item
+      {% endif %}
+    </h3>
+  </p>
+  <form enctype="multipart/form-data" action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+  <br><a href="{% url 'item_list' 'name' %}">Cancel</a>
+</div>
+{% endblock %}

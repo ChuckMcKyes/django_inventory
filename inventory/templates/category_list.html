@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-lg ms-5 mt-4 p-2 bg-dark text-light rounded" 
+               style=" opacity: 90%">
+  <p><h3 style="background-color: gray; margin-left: 20px">Categories</h3></p>
+  {% if category_list %}
+  <ul>
+    {% for category in category_list %}
+      <li>
+        {{ category }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no categories.</p>
+  {% endif %}
+  <ul style="list-style: None;">
+    <li><a href="{% url 'category_create' %}">Create new category</a></li>
+  </ul>
+</div>
+{% endblock %}

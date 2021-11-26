@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-lg ms-5 mt-4 p-2 bg-dark text-light rounded" style="opacity: 90%">
+  <h1>Delete Inventory Item</h1>
+  <p>Are you sure you want to delete the item: {{ items.name }}?</p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete." class="btn-danger rounded">
+  </form>
+</div>
+{% endblock %}
