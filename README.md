@@ -20,9 +20,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 <br><br>
 There are too many files in /www/static to put on github. The ones missing
-here are for the admin part of the Django site. If you want to try this
+here are for the admin part of the Django site. If you want to try this website
 then follow the instructions on docs.djangoproject.com, in particular
-using "python3 manage.py collectstatic".
+using "python3 manage.py collectstatic" to transfer static files to your localhost
+location. In this particular setup.py, the location is /var/www/static/ and the location
+for photos is /var/www/media/.
 <br>https://docs.djangoproject.com/en/3.2/howto/static-files/deployment/
 <br>https://docs.djangoproject.com/en/3.2/howto/deployment/
 <br>
