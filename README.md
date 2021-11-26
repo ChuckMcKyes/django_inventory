@@ -18,7 +18,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
-<br>
+<br><br>
 There are too many files in /www/static to put on github. The ones missing
 here are for the admin part of the Django site. If you want to try this
 then follow the instructions on docs.djangoproject.com, in particular
