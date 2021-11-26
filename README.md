@@ -31,3 +31,5 @@ for photos is /var/www/media/.
 Also, sudo chown www-data:www-data db.sqlite3 and
 <br>sudo chown www-data:www-data django_inventory  (the root directory)
 in order to run it on localhost.
+<br><br>
+The default login is 'admin' with password 'adminpassword'.
