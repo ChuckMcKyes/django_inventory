@@ -23,9 +23,9 @@ There are too many files in /www/static to put on github. The ones missing
 here are for the admin part of the Django site. If you want to try this
 then follow the instructions on docs.djangoproject.com, in particular
 using "python3 manage.py collectstatic".
-https://docs.djangoproject.com/en/3.2/howto/static-files/deployment/
-https://docs.djangoproject.com/en/3.2/howto/deployment/
+<br>https://docs.djangoproject.com/en/3.2/howto/static-files/deployment/
+<br>https://docs.djangoproject.com/en/3.2/howto/deployment/
 <br>
 Also, sudo chown www-data:www-data db.sqlite3 and
-sudo chown www-data:www-data django_inventory  (the root directory)
+<br>sudo chown www-data:www-data django_inventory  (the root directory)
 in order to run it on localhost.
