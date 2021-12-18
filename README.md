@@ -2,9 +2,9 @@
 
 Django Inventory website, Chuck McKyes<br>
 <br>
-v0.1.0 November 2022<br>
+v0.1.0 November 2021<br>
 <br>
-Copyright (C) 2022 Chuck McKyes</br>
+Copyright (C) 2021 Chuck McKyes</br>
 <br>
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
