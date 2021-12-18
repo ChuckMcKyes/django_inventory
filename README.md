@@ -1,4 +1,4 @@
-# mechcalc
+# Django Inventory
 
 Django Inventory website, Chuck McKyes<br>
 <br>
